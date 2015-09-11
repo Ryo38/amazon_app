@@ -1,8 +1,8 @@
 # amazon_app
 
 
-Githubのて雨sと
+Githubのテスト
 
-##メンバー
+#メンバー
 
 *testmember
