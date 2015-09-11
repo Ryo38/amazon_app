@@ -2,7 +2,10 @@
 
 <div class="container">
 	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
 		<h1>Sign up</h1>
+		<p class="text">Welcome to amazon app! Please enter the following information</p>
 
 		<%= form_for(@user) do |f| %>
 		<%= render 'shared/error_messages' %>
@@ -17,5 +20,7 @@
 		
 		<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
 		<% end %>
+		</div>
+		<div class="col-md-3"></div>
 	</div>
 </div>				
