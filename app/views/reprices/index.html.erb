@@ -1,0 +1,98 @@
+<% provide(:title, 'Reprice') %>
+	<div class="container-fluid">
+    	<div class="row">
+			<div class="col-md-2">
+				<h4>List</h4>
+					<div class="list-group">
+						<a href="#" class="list-group-item active">All items</a>
+						<a href="#" class="list-group-item">Less than $40</a>
+						<a href="#" class="list-group-item">SKU start with "FBA-"</a>
+						<a href="#" class="list-group-item">Supplier MDK</a>
+						<a href="#" class="list-group-item">Higher than $200</a>
+					</div>
+					<p class="text-right"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><%= link_to " Add a new list","#"%></p>
+			</div>
+			<div class="col-md-10">
+				<h4>Repricing Rule</h4>
+					<div role="tabpanel">
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active">
+								<a href="#filter" aria-controls="contents4 in active" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span> Filtering</a>
+							</li>
+							<li role="presentation">
+								<a href="#repricing-rule" aria-controls="contents5 " role="tab" data-toggle="tab"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Repricing Rule</a>
+							</li>
+							<li role="presentation">
+								<a href="#special-rule" aria-controls="contents6" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Special Rule</a>
+							</li>
+						</ul>
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="filter">
+							<h5>How can we set your competitor?</h5>
+								<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">Condition</h3>
+										</div>
+										<div class="panel-body">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading"><h3 class="panel-title">Seller Rating</h3></div>
+										<div class="panel-body">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading"><h3 class="panel-title">Seller Feedback</h3></div>
+										<div class="panel-body">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="panel panel-default">
+										<div class="panel-heading"><h3 class="panel-title">FBA</h3></div>
+										<div class="panel-body">
+										</div>
+									</div>
+								</div>
+
+								
+								
+								<p class="text-right"><button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+								Save
+								</button></p>
+
+<script>
+  $('#myButton').on('click', function () {
+    var $btn = $(this).button('loading')
+    // business logic...
+    $btn.button('reset')
+  })
+</script>
+
+
+						</div>
+						
+
+
+						<div role="tabpanel" class="tab-pane fade" id="repricing-rule">
+							<h5>How can we reprice your inventories against your competitor?</h5>
+						</div>
+						<div role="tabpanel" class="tab-pane fade" id="special-rule">
+							<h5>Do you want to add any special rules to this list?</h5>
+						</div>
+					</div>
+					</div>
+					
+
+
+					
+			</div>
+    	</div>
+	</div>
+	
+	
