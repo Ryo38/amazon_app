@@ -1,0 +1,35 @@
+<div class="container-fluid">
+	<div class="row">
+	  	<div class="col-md-8">
+			  	<h5>Price History</h5>
+			  		<%= high_stock("price_history", @price_history) %> 
+			  	<h5>Number of Offers </h5>
+			  	<div id="number_of_offer" style="width: 700px; height: 230px;"></div>
+			  	<h5>FBA Stocks</h5>
+			  	<div id="fba_stock" style="width: 700px; height: 230px;"></div>
+	  	</div>
+	  	<div class="col-md-4">
+			  	<h4>Has amazon</h4>
+			  	<div class="alert alert-info text-center" role="alert"><strong>No</strong></div>
+			  	<!--<div class="alert alert-warning text-center" role="alert"><strong>Warning!</strong></div>-->
+			  	<h4>Target Price</h4>
+			  	<div class="panel panel-default"><div class="panel-body"><h1 class="text-center">$38.00<br><small>平均BB価格</small></h1></div></div>
+			  	<div class="panel panel-default"><div class="panel-body"><h1 class="text-center">$37.00<br><small>平均最低価格</small></h1></div></div>
+			  	<h4>Best Performance Seller</h4>
+			  	<table class="table table-bordered table-striped">
+			  	<thead>
+			  	<tr><th>#</th><th>Shop Name</th><th>Estimated Sales Unit</th></tr>
+			  	</thead>
+			  	<tbody>
+			  	<tr><td>1</td><td>ABC Store</td><td>38</td></tr>
+			  	<tr><td>2</td><td>Japan Branding</td><td>25</td></tr>
+			  	<tr><td>3</td><td>Culture Japan</td><td>20</td></tr>
+			  	<tr><td>4</td><td>Global Mart</td><td>10</td></tr>
+			  	<tr><td>5</td><td>Wonderful Store</td><td>5</td></tr>
+			  	</tbody>
+			  	</table>
+		</div>
+
+
+	</div>
+</div>

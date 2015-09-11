@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sku: MyString
+  asin: MyString
+  title: MyText
+  condition: MyString
+  price: 1.5
+  ceiling: 1.5
+  competitor: 1.5
+  bb: 1.5
+  lowest: 1.5
+  fbalowest: 1.5
+  stock: 1
+  has_amazon: false
+  alert: false
+  ranking: 1
+  fba: false
+
+two:
+  sku: MyString
+  asin: MyString
+  title: MyText
+  condition: MyString
+  price: 1.5
+  ceiling: 1.5
+  competitor: 1.5
+  bb: 1.5
+  lowest: 1.5
+  fbalowest: 1.5
+  stock: 1
+  has_amazon: false
+  alert: false
+  ranking: 1
+  fba: false

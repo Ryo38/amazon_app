@@ -1,0 +1,107 @@
+<% provide(:title, 'Inventory') %>
+    <div class="container-fluid">	  
+    	<div class="row">
+			<div class="col-md-2">
+				<h4>Quick Search</h4>
+					<div class="input-group">
+						<%= search_form_for @q do |f| %>
+						<%= f.search_field :sku_or_asin_or_title_cont, :class => "form-control", :placeholder => "Search SKU, ASIN, Title.." %>
+					</div>	
+				<h4>Detail Search Options</h4>
+				<div class="panel panel-default">
+					<div class="panel-heading">Search Options</div>
+						<div class="panel-body">
+							<label><h5>Your Price</h5>
+								<%= f.search_field :price_gteq, :class => 'form-control', :placeholder => "$" %>〜<%= f.search_field :price_lteq, :class => 'form-control', :placeholder => "$"  %>
+							</label>
+							<label><h5>Ranking</h5>
+								<%= f.search_field :ranking_gteq, :class => 'form-control' %>〜<%= f.search_field :ranking_lteq, :class => 'form-control' %>
+							</label>
+							<label><h5>Stock</h5>
+								<%= f.search_field :stock_gteq, :class => 'form-control'%>〜<%= f.search_field :stock_lteq, :class => 'form-control'%>
+							</label>
+							<div>
+								<%= f.submit 'Search', :class=>"btn btn-default" %>
+							</div>
+					<% end %>
+						</div>
+					</div>
+				</div>
+			<div class="col-md-10">
+				<h4>Inventory in the list</h4>
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						All items
+						<span class="caret"></span>
+						</button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						<li><a href="#">Less than $40</a></li>
+						<li><a href="#">SKU start with "FBA-"</a></li>
+						<li><a href="#">Supplier MDK</a></li>
+						<li><a href="#">Higher than $200</a></li>
+ 					</ul>
+					</div>
+				<%= link_to 'New Inventory', new_inventory_path %>
+				<table class="table table-hover table-bordered">
+					<thead>
+						<tr>
+							<th class="text-center">Alert</th>
+							<th class="text-center">SKU</th>
+							<th class="text-center">ASIN</th>
+							<th class="text-center">Title</th>
+							<th class="text-center">Condition</th>
+							<th class="text-center">Category</th>
+							<th class="text-center">Ranking</th>
+							<th class="text-center">Your Price</th>
+							<th class="text-center">Ceiling Price</th>
+							<th class="text-center">Competitor</th>
+							<th class="text-center">BuyBox</th>
+							<th class="text-center">Lowest</th>
+							<th class="text-center">FBA Lowest</th>
+							<th class="text-center">Stock</th>
+							<th class="text-center">Has Amazon</th>
+							<th class="text-center">FBA</th>
+							<th colspan="3"></th>
+						</tr>
+					</thead>
+					
+
+					<tbody>
+					<% @inventories.each do |inventory| %>
+						<tr>
+							<td class="text-center"><% if inventory.alert == true then %><span class="glyphicon glyphicon-exclamation-sign" style="color:#a94442" aria-hidden="true"></span><% else %><% end %></td>
+							<td class="text-left"><%= link_to inventory.sku, inventory, :target=>["_blank"]  %></td>
+							<td class="text-left"><%= inventory.asin%></td>
+							<td class="text-left"><%= inventory.title %></td>
+							<td class="text-center"><%= inventory.condition %></td>
+							<td class="text-center"><%= inventory.category %></td>
+							<td class="text-right"><%= inventory.ranking %></td>
+							<td class="text-right"><%= number_to_currency(inventory.price) %></td>
+							<td class="text-right"><%= number_to_currency(inventory.ceiling) %></td>
+							<td class="text-right"><%= number_to_currency(inventory.competitor) %></td>
+							<td class="text-right"><%= number_to_currency(inventory.bb) %></td>
+							<td class="text-right"><%= number_to_currency(inventory.lowest) %></td>
+							<td class="text-right"><%= number_to_currency(inventory.fbalowest) %></td>
+							<td class="text-right"><%= inventory.stock %></td>
+							<td class="text-center"><% if inventory.has_amazon == true then %><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><% else %><% end %></td>
+							<td class="text-center"><% if inventory.fba == true then %><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><% else %><% end %></td>
+							<td><%= link_to "Delete", inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+						</tr>
+					<% end %>
+					</tbody>
+				</table>
+				<nav>		  		  
+					<ul class="pagination">
+					<li><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+					  <li><a href="#">1</a></li>
+					  <li><a href="#">2</a></li>
+					  <li><a href="#">3</a></li>
+					  <li><a href="#">4</a></li>
+					  <li><a href="#">5</a></li>
+					  <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+    </div>
+

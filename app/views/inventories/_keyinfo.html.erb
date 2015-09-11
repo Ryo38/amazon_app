@@ -1,0 +1,40 @@
+<div class="container-fluid">
+	<div class="row">
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-3">
+			<div class="col-xs-3">
+						<%= image_tag @inventory.image, height:90, width:90 %>
+			</div>
+			<div class="col-xs-9">
+						<h4><%= @inventory.title %></h4>
+			</div>
+			<table class="table ">
+				<tbody>
+				<tr><td><strong><i class="fa fa-barcode"></i> ASIN:</strong></td><td><%= @inventory.asin %></td></tr>
+				<tr><td>　　<i class="fa fa-caret-right"><strong> SKU:</strong></td><td><%= @inventory.sku %></td></tr>
+				<tr><td>　　<i class="fa fa-caret-right"><strong> UPC:</strong></td><td><%= @inventory.upc %></td></tr>
+				<tr><td><strong><i class="fa fa-tag"></i> Condition:</strong></td><td><%= @inventory.condition %></td></tr>
+				<tr><td><strong><i class="fa fa-sitemap"></i> Category:</strong></td><td><%= @inventory.category %></td></tr>
+				<tr><td><strong><i class="fa fa-bar-chart"></i> Rank in Category:</strong></td><td><%= @inventory.ranking %></td></tr>
+				<tr><td><strong><i class="fa fa-truck"></i> FBA Status:</strong></td><td><%= @inventory.fba %></td></tr>
+				<tr><td><strong><i class="fa fa-cubes"></i> Stock:</strong></td><td><%=@inventory.stock %></td></tr>
+				<tr><td><strong><i class="fa fa-shopping-cart"></i> Your Price:</strong></td><td><%= number_to_currency(@inventory.price) %></td></tr>
+				<tr><td>　　<i class="fa fa-caret-right"><strong> Ceiling Price:</strong></td><td><%= number_to_currency(@inventory.ceiling) %></td></tr>
+				<tr><td>　　<i class="fa fa-caret-right"><strong> BuyBox Price:</strong></td><td><%= number_to_currency(@inventory.bb) %></td></tr>
+				<tr><td>　　<i class="fa fa-caret-right"><strong> Lowest Price:</strong></td><td><%= number_to_currency(@inventory.lowest) %></td></tr>
+				<tr><td>　　<i class="fa fa-caret-right"><strong> FBA Lowest Price:</strong></td><td><%= number_to_currency(@inventory.fbalowest) %></td></tr>
+				<tr><td><strong><i class="fa fa-amazon"></i> Has Amazon:</strong></td><td><%= @inventory.has_amazon %></td></tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="col-md-7">
+			<%= high_stock("sales_history", @sales_history) %> 
+			<%= high_stock("order_history", @order_history) %> 
+		</div>
+
+	</div>
+</div>

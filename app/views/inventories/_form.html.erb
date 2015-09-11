@@ -1,0 +1,93 @@
+<%= form_for(@inventory) do |f| %>
+  <% if @inventory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
+
+      <ul>
+      <% @inventory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :sku %><br>
+    <%= f.text_field :sku %>
+  </div>
+  <div class="field">
+    <%= f.label :asin %><br>
+    <%= f.text_field :asin %>
+  </div>
+  <div class="field">
+    <%= f.label :upc %><br>
+    <%= f.text_field :upc %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_area :title %>
+  </div>
+  <div class="field">
+    <%= f.label :condition %><br>
+    <%= f.text_field :condition %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :ranking %><br>
+    <%= f.number_field :ranking %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :ceiling %><br>
+    <%= f.text_field :ceiling %>
+  </div>
+  <div class="field">
+    <%= f.label :competitor %><br>
+    <%= f.text_field :competitor %>
+  </div>
+  <div class="field">
+    <%= f.label :bb %><br>
+    <%= f.text_field :bb %>
+  </div>
+  <div class="field">
+    <%= f.label :lowest %><br>
+    <%= f.text_field :lowest %>
+  </div>
+  <div class="field">
+    <%= f.label :fbalowest %><br>
+    <%= f.text_field :fbalowest %>
+  </div>
+  <div class="field">
+    <%= f.label :stock %><br>
+    <%= f.number_field :stock %>
+  </div>
+  <div class="field">
+    <%= f.label :has_amazon %><br>
+    <%= f.check_box :has_amazon %>
+  </div>
+  <div class="field">
+    <%= f.label :alert %><br>
+    <%= f.check_box :alert %>
+  </div>
+  <div class="field">
+    <%= f.label :fba %><br>
+    <%= f.check_box :fba %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit data:{confirm: 'Are you sure?', disable_with:'processing..'} %>
+  </div>
+
+
+<% end %>

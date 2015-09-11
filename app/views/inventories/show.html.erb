@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+    <div class="container-fluid">
+	  <div class="row">
+		  <div class="col-md-12">
+			<div role="tabpanel">
+				<ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#keyinfo" aria-controls="contents4 in active" role="tab" data-toggle="tab">Key Info</a></li>
+					<li role="presentation"><a href="#competitor" aria-controls="contents5" role="tab" data-toggle="tab">Competitor</a></li>
+					<li role="presentation"><a href="#seo" aria-controls="contents6" role="tab" data-toggle="tab">SEO</a></li>
+					<li role="presentation"><a href="#segment" aria-controls="contents5" role="tab" data-toggle="tab">Segment</a></li>
+				</ul>
+			</div>
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="keyinfo">
+					<%= render 'inventories/keyinfo' %>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="competitor">
+					<%= render 'inventories/competitor' %>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="seo">
+					<%= render 'inventories/seo' %>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="segment">
+					<%= render 'inventories/segment' %>
+				</div>
+			</div><!--End tab-content-->
+		  </div><!--End col-mid-12-->
+	  </div>
+    </div>
+
+
+
+
+
+		</div><!--End col-md-2-->
+
+			
+		</div><!--End row-->
+	</div><!--End container-->
+	
+
+			<p class="text-left"><%= link_to 'Edit', edit_inventory_path(@inventory) %> | <%= link_to 'Back to Inventory', inventories_path %></p>
