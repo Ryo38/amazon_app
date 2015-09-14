@@ -1,0 +1,53 @@
+<%= form_for(@sku) do |f| %>
+  <% if @sku.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sku.errors.count, "error") %> prohibited this sku from being saved:</h2>
+
+      <ul>
+      <% @sku.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sku %><br>
+    <%= f.text_field :sku %>
+  </div>
+  <div class="field">
+    <%= f.label :my_price %><br>
+    <%= f.text_field :my_price %>
+  </div>
+  <div class="field">
+    <%= f.label :ceiling_price %><br>
+    <%= f.text_field :ceiling_price %>
+  </div>
+  <div class="field">
+    <%= f.label :floor_price %><br>
+    <%= f.text_field :floor_price %>
+  </div>
+  <div class="field">
+    <%= f.label :supplier %><br>
+    <%= f.text_field :supplier %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :repricing_status %><br>
+    <%= f.check_box :repricing_status %>
+  </div>
+  <div class="field">
+    <%= f.label :fba_status %><br>
+    <%= f.check_box :fba_status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

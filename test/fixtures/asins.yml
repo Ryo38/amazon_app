@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sku_id: 
+  asin: MyString
+  title: MyString
+  category: MyString
+  ranking: 1
+  brand: MyString
+  img_url: MyString
+
+two:
+  sku_id: 
+  asin: MyString
+  title: MyString
+  category: MyString
+  ranking: 1
+  brand: MyString
+  img_url: MyString

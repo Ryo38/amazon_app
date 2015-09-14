@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :competitors
+  resources :asins
+  resources :skus
   get 'users/new'
 
   get 'reprices/index'

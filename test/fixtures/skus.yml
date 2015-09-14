@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  sku: MyString
+  my_price: 1.5
+  ceiling_price: 1.5
+  floor_price: 1.5
+  supplier: MyString
+  cost: 1.5
+  repricing_status: false
+  fba_status: false
+
+two:
+  user_id: 
+  sku: MyString
+  my_price: 1.5
+  ceiling_price: 1.5
+  floor_price: 1.5
+  supplier: MyString
+  cost: 1.5
+  repricing_status: false
+  fba_status: false

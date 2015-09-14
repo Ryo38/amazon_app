@@ -11,7 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150911114322) do
+ActiveRecord::Schema.define(version: 20150914091300) do
+
+  create_table "asins", force: :cascade do |t|
+    t.integer  "sku_id"
+    t.string   "asin"
+    t.string   "title"
+    t.string   "category"
+    t.integer  "ranking"
+    t.string   "brand"
+    t.string   "img_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "asins", ["sku_id"], name: "index_asins_on_sku_id"
+
+  create_table "competitors", force: :cascade do |t|
+    t.integer  "asin_id"
+    t.string   "condition"
+    t.float    "lowest_price"
+    t.float    "buybox_price"
+    t.float    "lowest_fba_price"
+    t.boolean  "has_amazon"
+    t.integer  "number_of_offers"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "competitors", ["asin_id"], name: "index_competitors_on_asin_id"
 
   create_table "inventories", force: :cascade do |t|
     t.string   "sku"
@@ -35,6 +63,22 @@ ActiveRecord::Schema.define(version: 20150911114322) do
     t.string   "category"
     t.string   "image"
   end
+
+  create_table "skus", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "sku"
+    t.float    "my_price"
+    t.float    "ceiling_price"
+    t.float    "floor_price"
+    t.string   "supplier"
+    t.float    "cost"
+    t.boolean  "repricing_status"
+    t.boolean  "fba_status"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "skus", ["user_id"], name: "index_skus_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

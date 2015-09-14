@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sku:</strong>
+  <%= @asin.sku %>
+</p>
+
+<p>
+  <strong>Asin:</strong>
+  <%= @asin.asin %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @asin.title %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @asin.category %>
+</p>
+
+<p>
+  <strong>Ranking:</strong>
+  <%= @asin.ranking %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @asin.brand %>
+</p>
+
+<p>
+  <strong>Img url:</strong>
+  <%= @asin.img_url %>
+</p>
+
+<%= link_to 'Edit', edit_asin_path(@asin) %> |
+<%= link_to 'Back', asins_path %>

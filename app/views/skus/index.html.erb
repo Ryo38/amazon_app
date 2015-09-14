@@ -1,0 +1,93 @@
+<p id="notice"><%= notice %></p>
+    <div class="container-fluid">	  
+    	<div class="row">
+			<div class="col-md-2">
+				<h4>Quick Search</h4>
+					<div class="input-group">
+					</div>	
+				<h4>Detail Search Options</h4>
+				<div class="panel panel-default">
+					<div class="panel-heading">Search Options</div>
+						<div class="panel-body">
+							<label><h5>Your Price</h5>
+							</label>
+							<label><h5>Ranking</h5>
+							</label>
+							<label><h5>Stock</h5>
+							</label>
+							<div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<div class="col-md-10">
+				<h4>Inventory in the list</h4>
+					<div class="dropdown">
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						All items
+						<span class="caret"></span>
+						</button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						<li><a href="#">Less than $40</a></li>
+						<li><a href="#">SKU start with "FBA-"</a></li>
+						<li><a href="#">Supplier MDK</a></li>
+						<li><a href="#">Higher than $200</a></li>
+ 					</ul>
+					</div>
+				<%= link_to 'New Items', new_sku_path %>
+				<table class="table table-hover table-bordered">
+					<thead>
+						<tr>
+							<th class="text-center">SKU</th>
+							<th class="text-center">ASIN</th>
+							<th class="text-center">Title</th>
+							<th class="text-center">Condition</th>
+							<th class="text-center">Category</th>
+							<th class="text-center">Rank</th>
+							<th class="text-center">My Price</th>
+							<th class="text-center">Ceiling Price</th>
+							<th class="text-center">Floor Price</th>
+							<th class="text-center">Cost</th>
+							<th class="text-center">Supplier</th>
+							<th class="text-center">Repricing</th>
+							<th class="text-center">FBA</th>
+							<th colspan="3"></th>
+						</tr>
+					</thead>
+					
+					<% @skus.each do |sku| %>
+					<tbody>
+						<tr>
+							<td class="text-left"><%= sku.sku %></td>
+							<td class="text-left"></td>
+							<td class="text-left"></td>
+							<td class="text-left"></td>
+							<td class="text-left"></td>
+							<td class="text-left"></td>
+							<td class="text-right"><%= number_to_currency(sku.my_price) %></td>
+							<td class="text-right"><%= number_to_currency(sku.ceiling_price) %></td>
+							<td class="text-right"><%= number_to_currency(sku.floor_price) %></td>
+							<td class="text-right"><%= number_to_currency(sku.cost) %></td>
+							<td class="text-right"><%= sku.supplier %></td>
+							<td class="text-center"><% if sku.repricing_status == true then %><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><% else %><% end %></td>
+							<td class="text-center"><% if sku.fba_status == true then %><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><% else %><% end %></td>
+							<td><%= link_to "Delete", sku, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+						</tr>
+					</tbody>
+					<% end %>
+
+				</table>
+				<nav>		  		  
+					<ul class="pagination">
+					<li><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+					  <li><a href="#">1</a></li>
+					  <li><a href="#">2</a></li>
+					  <li><a href="#">3</a></li>
+					  <li><a href="#">4</a></li>
+					  <li><a href="#">5</a></li>
+					  <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+    </div>

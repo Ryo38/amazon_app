@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Asins</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Sku</th>
+      <th>Asin</th>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Ranking</th>
+      <th>Brand</th>
+      <th>Img url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @asins.each do |asin| %>
+      <tr>
+        <td><%= asin.sku %></td>
+        <td><%= asin.asin %></td>
+        <td><%= asin.title %></td>
+        <td><%= asin.category %></td>
+        <td><%= asin.ranking %></td>
+        <td><%= asin.brand %></td>
+        <td><%= asin.img_url %></td>
+        <td><%= link_to 'Show', asin %></td>
+        <td><%= link_to 'Edit', edit_asin_path(asin) %></td>
+        <td><%= link_to 'Destroy', asin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Asin', new_asin_path %>

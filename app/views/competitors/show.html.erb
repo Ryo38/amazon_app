@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Asin:</strong>
+  <%= @competitor.asin %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @competitor.condition %>
+</p>
+
+<p>
+  <strong>Lowest price:</strong>
+  <%= @competitor.lowest_price %>
+</p>
+
+<p>
+  <strong>Buybox price:</strong>
+  <%= @competitor.buybox_price %>
+</p>
+
+<p>
+  <strong>Lowest fba price:</strong>
+  <%= @competitor.lowest_fba_price %>
+</p>
+
+<p>
+  <strong>Has amazon:</strong>
+  <%= @competitor.has_amazon %>
+</p>
+
+<p>
+  <strong>Number of offers:</strong>
+  <%= @competitor.number_of_offers %>
+</p>
+
+<%= link_to 'Edit', edit_competitor_path(@competitor) %> |
+<%= link_to 'Back', competitors_path %>

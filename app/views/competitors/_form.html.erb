@@ -1,0 +1,45 @@
+<%= form_for(@competitor) do |f| %>
+  <% if @competitor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@competitor.errors.count, "error") %> prohibited this competitor from being saved:</h2>
+
+      <ul>
+      <% @competitor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :asin_id %><br>
+    <%= f.text_field :asin_id %>
+  </div>
+  <div class="field">
+    <%= f.label :condition %><br>
+    <%= f.text_field :condition %>
+  </div>
+  <div class="field">
+    <%= f.label :lowest_price %><br>
+    <%= f.text_field :lowest_price %>
+  </div>
+  <div class="field">
+    <%= f.label :buybox_price %><br>
+    <%= f.text_field :buybox_price %>
+  </div>
+  <div class="field">
+    <%= f.label :lowest_fba_price %><br>
+    <%= f.text_field :lowest_fba_price %>
+  </div>
+  <div class="field">
+    <%= f.label :has_amazon %><br>
+    <%= f.check_box :has_amazon %>
+  </div>
+  <div class="field">
+    <%= f.label :number_of_offers %><br>
+    <%= f.number_field :number_of_offers %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

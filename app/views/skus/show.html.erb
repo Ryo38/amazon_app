@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @sku.user %>
+</p>
+
+<p>
+  <strong>Sku:</strong>
+  <%= @sku.sku %>
+</p>
+
+<p>
+  <strong>My price:</strong>
+  <%= @sku.my_price %>
+</p>
+
+<p>
+  <strong>Ceiling price:</strong>
+  <%= @sku.ceiling_price %>
+</p>
+
+<p>
+  <strong>Floor price:</strong>
+  <%= @sku.floor_price %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @sku.supplier %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @sku.cost %>
+</p>
+
+<p>
+  <strong>Repricing status:</strong>
+  <%= @sku.repricing_status %>
+</p>
+
+<p>
+  <strong>Fba status:</strong>
+  <%= @sku.fba_status %>
+</p>
+
+<%= link_to 'Edit', edit_sku_path(@sku) %> |
+<%= link_to 'Back', skus_path %>
